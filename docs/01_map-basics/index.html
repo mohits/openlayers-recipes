@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading OpenLayers and an OSM Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/ol@v9.2.4/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v9.2.4/ol.css">
+</head>
+<body>
+    <div id="map" style="width: 100%; height: 800px; "></div>
+
+    <script>
+    var map = new ol.Map({
+        layers: [
+            new ol.layer.Tile({source: new ol.source.OSM()}),
+        ],
+        view: new ol.View({
+            center: ol.proj.fromLonLat([103.812507, 1.328796]),
+            zoom: 11,
+        }),
+        target: 'map',
+    });
+    </script>
+</body>
+</html>
